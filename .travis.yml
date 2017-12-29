@@ -27,7 +27,7 @@ before_install:
   - echo "Showing resulting permissions with ls -la -a"
   - ls -la -a
   - echo "Starting expliciltly ./gradlew assemble"
-  - ./gradlew assemble
+  - chmod +x ./gradlew assemble
 
 install:
   - echo "We are in install section"
@@ -38,4 +38,4 @@ before_script:
 
 script:
   - echo "We are in script section"
-  - ./gradlew clean build
+  - chmod +x ./gradlew clean build
