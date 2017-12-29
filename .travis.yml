@@ -14,6 +14,19 @@ matrix:
       env: OSX=10.12.1
       osx_image: xcode9.2
 
-
+before_script:
+  - echo "Starting before script"
+  - echo "Showing pwd"
+  - pwd
+  - echo "Showing initial permissions with ls -la -a"
+  - ls -la -a
+  - echo "Changing permissions on the file ./gradlew"
+  - ls -la -a
+  - chmod -x ./gradlew
+  - echo "Showing resulting permissions with ls -la -a"
+  - ls -la -a
+  - echo "Starting expliciltly ./gradlew assemble"
+  - ./gradlew assemble
 script:
+  - echo "Starting script section"
   - ./gradlew clean build
