@@ -9,7 +9,7 @@ matrix:
   include:
     - os: linux
       dist: trusty
-      jdk: oraclejdk8
+      jdk: oraclejdk9
     - os: osx
       env: OSX=10.12.1
       osx_image: xcode9.2
@@ -26,8 +26,9 @@ before_install:
   - chmod -x ./gradlew
   - echo "Showing resulting permissions with ls -la -a"
   - ls -la -a
-  - echo "Starting expliciltly ./gradlew assemble"
-  - chmod +x ./gradlew assemble
+  - git ls-tree HEAD
+#  - echo "Starting expliciltly ./gradlew assemble"
+#  - chmod +x ./gradlew assemble
 
 install:
   - echo "We are in install section"
@@ -38,4 +39,4 @@ before_script:
 
 script:
   - echo "We are in script section"
-  - chmod +x ./gradlew clean build
+  - ./gradlew clean build
