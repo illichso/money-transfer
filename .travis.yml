@@ -39,4 +39,4 @@ before_script:
 
 script:
   - echo "We are in script section"
-  - ./gradlew clean build
+  - gradle clean build

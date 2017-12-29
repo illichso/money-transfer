@@ -1,4 +1,7 @@
 package com.illichso.moneytransfer.repository;
 
-public interface TransferRepository {
+import com.illichso.moneytransfer.model.Transfer;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+
+public interface TransferRepository extends ReactiveMongoRepository <Transfer, String> {
 }
