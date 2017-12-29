@@ -9,7 +9,6 @@ matrix:
   include:
     - os: linux
       dist: trusty
-      group: deprecated-2017Q4
       jdk: oraclejdk9
     - os: osx
       env: OSX=10.12.1
@@ -18,6 +17,6 @@ matrix:
 script:
   - echo "Starting script"
   - java -version
-  - chmod +x ./gradlew
-  - chmod +x gradlew
+#  - chmod +x ./gradlew
+#  - chmod +x gradlew
   - ./gradlew clean build
