@@ -17,9 +17,7 @@ matrix:
 before_install:
   - chmod +x gradlew
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask uninstall java; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask reinstall java; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
 
 script:
