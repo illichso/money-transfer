@@ -29,9 +29,9 @@ before_install:
   - git ls-tree HEAD
 #  - echo "Starting expliciltly ./gradlew assemble"
 #  - chmod +x ./gradlew assemble
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
 
 
 install:
