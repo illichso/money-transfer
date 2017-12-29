@@ -39,7 +39,6 @@ typings/
 .gradle
 /build/
 gradle-app.setting
-!gradle-wrapper.jar
 .gradletasknamecache
 .metadata
 bin/
@@ -91,7 +90,6 @@ nbdist/
 *.class
 *.ctxt
 .mtj.tmp/
-*.jar
 *.war
 *.ear
 *.zip
