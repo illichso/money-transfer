@@ -29,16 +29,21 @@ before_install:
   - git ls-tree HEAD
 #  - echo "Starting expliciltly ./gradlew assemble"
 #  - chmod +x ./gradlew assemble
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
+
 
 install:
   - echo "We are in install section"
-  - chmod +x gradlew
+#  - chmod +x gradlew
 
 
 before_script:
   - echo "We are in before_script section"
-  - chmod +x gradlew
+#  - chmod +x gradlew
 
 script:
   - echo "We are in script section"
+  - java -version
   - ./gradlew clean build
