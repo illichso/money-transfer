@@ -15,35 +15,12 @@ matrix:
       osx_image: xcode9.2
 
 before_install:
-  - echo "We are in before_install section"
-  - echo "Starting before install"
-  - echo "Showing pwd"
-  - pwd
-  - echo "Showing initial permissions with ls -la -a"
-  - ls -la -a
-  - echo "Changing permissions on the file ./gradlew"
-  - ls -la -a
   - chmod +x gradlew
-  - echo "Showing resulting permissions with ls -la -a"
-  - ls -la -a
-  - git ls-tree HEAD
-#  - echo "Starting expliciltly ./gradlew assemble"
-#  - chmod +x ./gradlew assemble
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask uninstall java; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then java -version; fi
 
-
-install:
-  - echo "We are in install section"
-#  - chmod +x gradlew
-
-
-before_script:
-  - echo "We are in before_script section"
-#  - chmod +x gradlew
-
 script:
-  - echo "We are in script section"
-  - java -version
   - ./gradlew clean build
