@@ -14,8 +14,9 @@ matrix:
       env: OSX=10.12.1
       osx_image: xcode9.2
 
-before_script:
-  - echo "Starting before script"
+before_install:
+  - echo "We are in before_install section"
+  - echo "Starting before install"
   - echo "Showing pwd"
   - pwd
   - echo "Showing initial permissions with ls -la -a"
@@ -27,6 +28,14 @@ before_script:
   - ls -la -a
   - echo "Starting expliciltly ./gradlew assemble"
   - ./gradlew assemble
+
+install:
+  - echo "We are in install section"
+
+
+before_script:
+  - echo "We are in before_script section"
+
 script:
-  - echo "Starting script section"
+  - echo "We are in script section"
   - ./gradlew clean build
