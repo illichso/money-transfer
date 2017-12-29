@@ -12,6 +12,7 @@ install:
   - SET PATH=C:\jdk9\bin;%PATH%
   - refreshenv
   - java -version
+  - gradlew -version
 
 build_script:
   - gradlew.bat clean build
