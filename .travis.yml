@@ -23,7 +23,7 @@ before_install:
   - ls -la -a
   - echo "Changing permissions on the file ./gradlew"
   - ls -la -a
-  - chmod -x ./gradlew
+  - chmod +x gradlew
   - echo "Showing resulting permissions with ls -la -a"
   - ls -la -a
   - git ls-tree HEAD
@@ -32,11 +32,13 @@ before_install:
 
 install:
   - echo "We are in install section"
+  - chmod +x gradlew
 
 
 before_script:
   - echo "We are in before_script section"
+  - chmod +x gradlew
 
 script:
   - echo "We are in script section"
-  - gradle clean build
+  - ./gradlew clean build
