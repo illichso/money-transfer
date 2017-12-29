@@ -7,13 +7,14 @@ build:
   verbosity: quiet
 
 install:
-  - cup all -v
+  - java -version
+  - cuninst jdk8 -y
   - cinst jdk9  -y
   - refreshenv
   - java -version
 
 build_script:
-  - gradlew.bat build
+  - gradlew.bat clean build
 
 branches:
   only:
