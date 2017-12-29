@@ -1,0 +1,20 @@
+version: 1.0.{build}
+platform:
+  - x86
+  - x64
+
+build:
+  verbosity: quiet
+
+install:
+  - cup all -v
+  - cinst jdk9  -y
+  - refreshenv
+  - java -version
+
+build_script:
+  - gradlew.bat build
+
+branches:
+  only:
+    - master

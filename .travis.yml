@@ -1,0 +1,20 @@
+language: java
+sudo: required
+
+branches:
+  only:
+  - master
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      jdk: oraclejdk9
+    - os: osx
+      env: OSX=10.12.1
+      osx_image: xcode9.2
+
+script:
+  - java -version
+  - chmod +x ./gradlew
+  - ./gradlew clean build
