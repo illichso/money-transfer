@@ -8,23 +8,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "transfers")
-public class Transfer implements Serializable {
+@Document(collection = "clients")
+public class Client implements Serializable {
     @Id
     @Field("_id")
     private String id;
-    @Field("amount")
-    private BigDecimal amount;
-    @Field("timestamp")
-    private LocalDateTime timestamp;
-    @Field("description")
-    private String description;
-    @Field("client_id")
-    private String clientId;
+    @Field("full_name")
+    private String fullName;
+    @Field("birth_date")
+    private LocalDateTime birthDate;
 }
