@@ -27,4 +27,8 @@ public class Transfer implements Serializable {
     private String description;
     @Field("client_id")
     private String clientId;
+
+    public void resetId() {
+        this.id = null;
+    }
 }

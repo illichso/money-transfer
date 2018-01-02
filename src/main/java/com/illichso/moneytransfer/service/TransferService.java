@@ -7,4 +7,5 @@ import reactor.core.publisher.Mono;
 public interface TransferService {
     Flux<Transfer> all();
     Mono<Transfer> byId(String id);
+    Mono<Transfer> save(Transfer transfer);
 }

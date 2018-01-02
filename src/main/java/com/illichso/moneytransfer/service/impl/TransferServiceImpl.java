@@ -27,4 +27,10 @@ public class TransferServiceImpl implements TransferService {
     public Mono<Transfer> byId(String id) {
         return transferRepository.findById(id);
     }
+
+    @Override
+    public Mono<Transfer> save(Transfer transfer) {
+        transfer.resetId();
+        return transferRepository.save(transfer);
+    }
 }
