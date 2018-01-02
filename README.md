@@ -2,7 +2,7 @@
 
 A​ ​RESTful​ ​API​ for​ ​money transfers​ ​between​ ​accounts.
 
-## Java9 + Spring Boot + Spring Data Rest + Gradle
+## Java9 + Spring Reactive Web + Spring Reactive MongoDB + Spring Boot + Gradle
 
 ## CI Build Statuses
 | Linux          | macOS          | Windows          |License           |
